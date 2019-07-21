@@ -30,5 +30,6 @@ Search for branch details given an IFSC code `SBIN0002146`:
 Search for branch details given bank name `STATE BANK OF INDIA` and city `CANACONA`:
 ![Screenshot](docs/images/Screenshot 2019-07-21 22.51.47.png)
 
-
+# references
+Data taken from [repository](https://github.com/snarayanank2/indian_banks)
 
