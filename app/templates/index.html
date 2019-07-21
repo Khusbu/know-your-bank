@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+    <div class="row">
+        <form action="/search_bank" method="get" class="form-row">
+            <div class="form-group">
+                <label>Enter IFSC code:</label>
+                <input type="text" name="ifsc" class="form-control" placeholder="ICIC000058">
+            </div>
+            <div>
+                <button type="submit" class="btn btn-primary">Fetch Bank Details</button>
+            </div>
+            <br>
+            {% block bank_results %}{% endblock %}
+        </form>
+        <br>
+        <form action="/search_branches" method="get" class="form-row">
+            <div class="form-group">
+                <label>Enter bank name: </label>
+                <input type="text" name="bank_name" class="form-control" placeholder="State Bank of India">
+                <label>Enter city: </label>
+                <input type="text" name="city" class="form-control" placeholder="Mumbai">
+            </div>
+            <div>
+                <button type="submit" class="btn btn-primary">Fetch all the branches</button>
+            </div>
+            <br>
+            {% block branch_results %}{% endblock %}
+        </form>
+        <br>
+    </div>
+    <br>
+    {% block results %}{% endblock %}
+{% endblock %}

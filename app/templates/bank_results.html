@@ -1,0 +1,13 @@
+{% extends "index.html" %}
+
+{% block bank_results %}
+    {% if bank %}
+        <div>
+            <b>Bank ID: </b>{{ bank.id }}<br>
+            <b>Bank Name: </b>{{ bank.name }}<br>
+        </div>
+        </br>
+    {% else %}
+        "Uh oh! nothing found"
+    {% endif %}
+{% endblock %}

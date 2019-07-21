@@ -1,0 +1,13 @@
+{% extends "index.html" %}
+
+{% block branch_results %}
+    {% if branch %}
+        <div>
+            <b>Bank ID: </b>{{ branch.bank_id }}<br>
+            <b>City: </b>{{ branch.city }}<br>
+        </div>
+        </br>
+    {% else %}
+        "Uh oh! nothing found"
+    {% endif %}
+{% endblock %}

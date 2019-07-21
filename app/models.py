@@ -21,9 +21,8 @@ class Bank(db.Model):
 class Branch(db.Model):
     __tablename__ = 'branches'
 
-    id = db.Column(db.Integer, primary_key=True)
     bank_id = db.Column(db.Integer, db.ForeignKey('banks.id'), nullable=False)
-    ifsc = db.Column(db.String())
+    ifsc = db.Column(db.String(), primary_key=True)
     branch = db.Column(db.String())
     address = db.Column(db.String())
     city = db.Column(db.String())
