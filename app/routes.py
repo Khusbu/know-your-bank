@@ -10,15 +10,15 @@ def index():
 
 @app.route("/search_branch")
 def search_branch():
-    ifsc = request.args.get('ifsc')
+    ifsc = request.args.get('ifsc').upper()
     branch = Branch.query.filter_by(ifsc=ifsc).first()
     return render_template('branch_results.html', branch=branch)
 
 
 @app.route("/search_branches")
 def search_branches():
-    bank_name = request.args.get('bank_name')
-    city = request.args.get('city')
+    bank_name = request.args.get('bank_name').upper()
+    city = request.args.get('city').upper()
     bank = Bank.query.filter_by(name=bank_name).first()
     branches = Branch.query.filter_by(bank_id=bank.id, city=city) if bank else None
     total = branches.count()
