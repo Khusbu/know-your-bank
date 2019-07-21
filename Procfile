@@ -1,1 +1,1 @@
-web: gunicorn know-your-bank:app
+web: gunicorn app:app
