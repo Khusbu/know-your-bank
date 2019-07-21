@@ -3,8 +3,13 @@
 {% block branch_results %}
     {% if branch %}
         <div>
-            <b>Bank ID: </b>{{ branch.bank_id }}<br>
+            <b>Bank: </b>{{ branch.bank.name }}<br>
+            <b>Branch: </b>{{ branch.branch }}<br>
+            <b>IFSC: </b>{{ branch.ifsc }}<br>
+            <b>Address: </b>{{ branch.address }}<br>
             <b>City: </b>{{ branch.city }}<br>
+            <b>District: </b>{{ branch.district }}<br>
+            <b>State: </b>{{ branch.state }}<br>
         </div>
         </br>
     {% else %}

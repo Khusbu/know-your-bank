@@ -1,0 +1,25 @@
+{% extends "index.html" %}
+
+{% block branches_results %}
+    {% if branches %}
+        <div>
+            <h4>{{total}} records found</h4>
+            <br>
+            {% for branch in branches %}
+                <div>
+                    <b>Bank: </b>{{ branch.bank.name }}<br>
+                    <b>Branch: </b>{{ branch.branch }}<br>
+                    <b>IFSC: </b>{{ branch.ifsc }}<br>
+                    <b>Address: </b>{{ branch.address }}<br>
+                    <b>City: </b>{{ branch.city }}<br>
+                    <b>District: </b>{{ branch.district }}<br>
+                    <b>State: </b>{{ branch.state }}<br>
+                    <br>
+                </div>
+            {% endfor %}
+        </div>
+        </br>
+    {% else %}
+        "Uh oh! nothing found"
+    {% endif %}
+{% endblock %}

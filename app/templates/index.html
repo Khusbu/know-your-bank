@@ -2,30 +2,31 @@
 
 {% block app_content %}
     <div class="row">
-        <form action="/search_bank" method="get" class="form-row">
+        <form action="/search_branch" method="get" class="form-row">
             <div class="form-group">
                 <label>Enter IFSC code:</label>
-                <input type="text" name="ifsc" class="form-control" placeholder="ICIC000058">
+                <input type="text" name="ifsc" class="form-control" placeholder="SBIN0002146">
             </div>
             <div>
-                <button type="submit" class="btn btn-primary">Fetch Bank Details</button>
+                <button type="submit" class="btn btn-primary">Fetch Branch Details</button>
             </div>
             <br>
-            {% block bank_results %}{% endblock %}
+            {% block branch_results %}{% endblock %}
         </form>
         <br>
         <form action="/search_branches" method="get" class="form-row">
             <div class="form-group">
                 <label>Enter bank name: </label>
-                <input type="text" name="bank_name" class="form-control" placeholder="State Bank of India">
+                <input type="text" name="bank_name" class="form-control" placeholder="STATE BANK OF INDIA">
+                <br>
                 <label>Enter city: </label>
-                <input type="text" name="city" class="form-control" placeholder="Mumbai">
+                <input type="text" name="city" class="form-control" placeholder="KOLKATA">
             </div>
             <div>
                 <button type="submit" class="btn btn-primary">Fetch all the branches</button>
             </div>
             <br>
-            {% block branch_results %}{% endblock %}
+            {% block branches_results %}{% endblock %}
         </form>
         <br>
     </div>
