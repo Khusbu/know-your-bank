@@ -20,7 +20,7 @@ def search_branches():
     bank_name = request.args.get('bank_name').upper()
     city = request.args.get('city').upper()
     bank = Bank.query.filter_by(name=bank_name).first()
-    branches = Branch.query.filter_by(bank_id=bank.id, city=city) if bank else None
+    branches = Branch.query.filter_by(bank_id=bank.id, city=city)
     total = branches.count()
     return render_template('branches_results.html', branches=branches, total=total)
 
